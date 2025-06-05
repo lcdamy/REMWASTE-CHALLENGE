@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  background-image: url('../public/GradientMesh_Light.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #0F053C;
+}
