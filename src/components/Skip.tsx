@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Continue from './Continue';
 import SubHeader from './SubHeader';
-import type {ISkip} from '../lib/constants'
+import type { ISkip } from '../lib/constants'
 import Item from './Item';
 import { IoReloadOutline } from "react-icons/io5";
 
@@ -20,11 +20,11 @@ const Skip = () => {
     const [selectedSkip, setSelectedSkip] = useState<number | null>(null);
 
     useEffect(() => {
-        const storedSkip= localStorage.getItem('storedSkip');
-        if(storedSkip){
-            setSelectedSkip(()=> Number(storedSkip))
+        const storedSkip = localStorage.getItem('storedSkip');
+        if (storedSkip) {
+            setSelectedSkip(() => Number(storedSkip))
         }
-        
+
         const fetchSkips = async () => {
             try {
                 const response = await axios.get(
@@ -55,21 +55,20 @@ const Skip = () => {
 
     // toggle the selected skip for only the one clicked
     const handleSkipSelect = (skip: ISkip) => {
-       
+
         setSelectedSkip((prevSelected) => {
-            if(prevSelected===skip.id){
+            if (prevSelected === skip.id) {
                 localStorage.removeItem('storedSkip')
             }
             return prevSelected === skip.id ? null : skip.id
         });
-        localStorage.setItem('storedSkip',skip.id.toString())
+        localStorage.setItem('storedSkip', skip.id.toString())
     };
 
     if (loading) {
         return <div className="text-center text-white text-lg min-h-[80vh] min-w-[70vw] flex  justify-center items-center">
-                <IoReloadOutline className='rotate animate-spin h-14 w-14' />
-            
-            </div>;
+            <IoReloadOutline className='rotate animate-spin h-14 w-14' />
+        </div>;
     }
 
     if (error) {
@@ -78,19 +77,16 @@ const Skip = () => {
 
     return (
         <div className='relative'>
-        <SubHeader />
+            <SubHeader />
             <div className="relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 pb-32 mt-[4rem]">
                 {skips.map((skip) => (
                     <div key={skip.id} className='col-span-1 '>
                         <Item skip={skip} selectedSkip={selectedSkip} handleSkipSelect={handleSkipSelect} />
                     </div>
-                        
                 ))}
-                
-                
             </div>
             {selectedSkip && (
-                    <div className="sticky bottom-0 bg-black border border-white rounded-md w-full left-0 z-50 flex items-center justify-center gap-6">
+                <div className="sticky bottom-0 bg-black border border-white rounded-md w-full left-0 z-50 flex items-center justify-center gap-6">
                     <Continue skip={skips.find(skip => skip.id === selectedSkip) || {
                         id: 0,
                         size: 0,
@@ -108,7 +104,7 @@ const Skip = () => {
                         allows_heavy_waste: false,
                     }} />
                 </div>
-                )}
+            )}
         </div>
     );
 };

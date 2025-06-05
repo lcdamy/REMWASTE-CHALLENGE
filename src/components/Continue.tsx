@@ -1,6 +1,6 @@
 import Yard from '../assets/4-yarder-skip.jpg';
 import { FaLongArrowAltRight } from "react-icons/fa";
-import type { ISkip, stepI } from '../lib/constants';
+import type { ISkip } from '../lib/constants';
 import { steps } from '../lib/constants';
 import { useStepsStore } from '../store/useStepsStore';
 
@@ -13,11 +13,12 @@ const Continue = ({ skip }: ContinueProps) => {
   const { currentStep, setCurrentStep } = useStepsStore();
 
   const handleMoveBack = () => {
-    setCurrentStep(steps[1])
+    setCurrentStep(steps[1]);
   }
   const handleMoveNext = () => {
-    setCurrentStep(steps[3])
+    setCurrentStep(steps[3]);
   }
+  console.log('Current Step:', currentStep);
 
   return (
     <div className="flex flex-col items-center bg-black p-2 rounded-lg w-full md:flex-row md:justify-between">

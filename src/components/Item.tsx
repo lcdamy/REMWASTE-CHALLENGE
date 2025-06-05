@@ -12,7 +12,7 @@ function Item({ skip, selectedSkip, handleSkipSelect }: props) {
     return (
         <div
             key={skip.id}
-            className={`relative md:w-full bg-black/40  rounded-lg p-4 hover:bg-[#13084ACC]/80 hover:border-[#2196F3] hover:border-[1.6px] hover:shadow-2xl hover:shadow-[#2196F3] ${selectedSkip === skip.id ? 'shadow-2xl border-[1.6px] shadow-[#2196F3]' : ''}`}
+            className={`relative md:w-full bg-black/40  rounded-lg p-4 hover:bg-[#13084ACC]/80 hover:border-[#2196F3] hover:border-[1.6px] hover:shadow-2xl hover:shadow-[#2196F3] ${selectedSkip === skip.id ? 'shadow-2xl border-[#2196F3] border-[1.6px] shadow-[#2196F3]' : ''}`}
         >
             <a href="#">
                 <img
