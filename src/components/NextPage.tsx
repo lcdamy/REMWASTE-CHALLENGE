@@ -1,4 +1,11 @@
+import { useEffect } from 'react';
+
 const NextPage = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100 dark:bg-gray-900 p-4">
       <h1 className="text-4xl font-bold mb-4 dark:text-white">Where will the skip be placed?</h1>
@@ -9,7 +16,6 @@ const NextPage = () => {
       >
         Go Back to Previous
       </a>
-
     </div>
   )
 }
