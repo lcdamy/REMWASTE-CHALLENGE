@@ -42,7 +42,7 @@ function Item({ skip, selectedSkip, handleSkipSelect }: props) {
                 }
             `}
         >
-            <a href="#" className="relative">
+            <div className="relative">
                 <img
                     className={`rounded-xl ${selectedSkip === skip.id ? '' : 'mt-[-3rem]'} `}
                     src={skip.image_url}
@@ -54,7 +54,7 @@ function Item({ skip, selectedSkip, handleSkipSelect }: props) {
                         <Tooltip id="my-tooltip" place="bottom" />
                     </div>
                 )}
-            </a>
+            </div>
 
             <div className="flex flex-col items-center">
                 <h1 className="font-bold text-[22px] leading-[100%] mt-4 text-gray-900 dark:text-white">
