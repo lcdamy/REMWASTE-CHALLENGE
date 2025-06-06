@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import SubHeader from './SubHeader';
-import type { ISkip } from '../lib/constants'
+import type { SkipType } from '../lib/types'
 import Item from './Item';
 import { IoReloadOutline } from "react-icons/io5";
 
@@ -13,7 +13,7 @@ const images = Object.fromEntries(
 );
 
 const Skip = () => {
-    const [skips, setSkips] = useState<ISkip[]>([]);
+    const [skips, setSkips] = useState<SkipType[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [selectedSkip, setSelectedSkip] = useState<number | null>(null);
@@ -30,7 +30,7 @@ const Skip = () => {
                     'https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft'
                 );
                 //map the response data by adding a correponsing image_url
-                const skipsWithImages = response.data.map((skip: ISkip) => {
+                const skipsWithImages = response.data.map((skip: SkipType) => {
                     // Build the image filename based on the skip size
                     const imageFileName = `${skip.size}-yarder-skip.jpg`;
                     // Get the full path from the images object
@@ -53,7 +53,7 @@ const Skip = () => {
     }, []);
 
     // toggle the selected skip for only the one clicked
-    const handleSkipSelect = (skip: ISkip) => {
+    const handleSkipSelect = (skip: SkipType) => {
 
         setSelectedSkip((prevSelected) => {
             if (prevSelected === skip.id) {

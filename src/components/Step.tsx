@@ -1,11 +1,11 @@
-import type { stepI } from '../lib/constants'
+import type { StepType } from '../lib/types'
 import { FaCheck } from "react-icons/fa6";
 interface props {
-  step: stepI,
+  step: StepType,
   isSelected: boolean,
   isPrevious: boolean,
   isLast: boolean,
-  setSelectedStep: (step: stepI) => void
+  setSelectedStep: (step: StepType) => void
 }
 
 function Step({ step, isSelected, isPrevious, setSelectedStep, isLast }: props) {

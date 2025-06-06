@@ -1,7 +1,7 @@
 import { FaCheck } from "react-icons/fa6";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaExclamationTriangle } from "react-icons/fa";
-import type { ISkip } from './../lib/constants'
+import type { SkipType } from './../lib/types'
 import { motion } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -10,9 +10,9 @@ import "react-tooltip/dist/react-tooltip.css";
 
 
 interface props {
-    skip: ISkip,
+    skip: SkipType,
     selectedSkip: number | null,
-    handleSkipSelect: (skip: ISkip) => void
+    handleSkipSelect: (skip: SkipType) => void
 }
 
 function Item({ skip, selectedSkip, handleSkipSelect }: props) {
