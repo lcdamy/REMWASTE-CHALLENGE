@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <div className="mx-8 md:mx-32">
         <Header />
-        <div className="flex flex-col md:flex-row mt-[48px] md:gap-24 gap-2">
+        <div className="flex flex-col md:flex-row mt-[48px] mb-4 md:gap-24 gap-2">
           <div className="lg:w-1/5 w-full lg:h-full">
             <Stepper />
           </div>
