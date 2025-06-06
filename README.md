@@ -13,13 +13,6 @@ You can view a live version of the project here:
 
 ---
 
-
-## 👤 Author
-
-[Pierre Damien Murindangabo Cyuzuzo – UX/UI Design Challenge Participant](https://www.linkedin.com/in/pierre-damien-murindangabo-cyuzuzo-709b53151/)
-
----
-
 ## 🚀 Getting Started
 
 Follow these steps to set up and run the project locally.
@@ -67,3 +60,9 @@ REMWaste-challenge/
 ├── package.json
 └── README.md
 ```
+
+## 👤 Author
+
+[Pierre Damien Murindangabo Cyuzuzo – UX/UI Design Challenge Participant](https://www.linkedin.com/in/pierre-damien-murindangabo-cyuzuzo-709b53151/)
+
+---
