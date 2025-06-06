@@ -4,6 +4,7 @@
 
 /* Light mode styles (default) */
 body {
+  transition: background-color 0.3s ease, color 0.3s ease;
   background-image: url('../public/GradientMesh_Light.png');
   background-size: contain;
   background-repeat: no-repeat;
