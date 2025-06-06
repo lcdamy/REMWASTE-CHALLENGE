@@ -65,7 +65,7 @@ const Skip = () => {
     };
 
     if (loading) {
-        return <div className="text-center text-white text-lg min-h-[80vh] min-w-[70vw] flex  justify-center items-center">
+        return <div className="text-center dark:text-white text-gray text-lg min-h-[80vh] min-w-[70vw] flex  justify-center items-center">
             <IoReloadOutline className='rotate animate-spin h-14 w-14' />
         </div>;
     }

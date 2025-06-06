@@ -1,10 +1,12 @@
 import { FaCheck } from "react-icons/fa6";
 import { IoCloseSharp } from "react-icons/io5";
+import { FaExclamationTriangle } from "react-icons/fa";
 import type { ISkip } from './../lib/constants'
 import { motion } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
 
 interface props {
@@ -40,13 +42,20 @@ function Item({ skip, selectedSkip, handleSkipSelect }: props) {
                 }
             `}
         >
-            <a href="#">
+            <a href="#" className="relative">
                 <img
-                    className={`rounded-xl ${selectedSkip === skip.id ? '' : 'mt-[-3rem]'}`}
+                    className={`rounded-xl ${selectedSkip === skip.id ? '' : 'mt-[-3rem]'} `}
                     src={skip.image_url}
                     alt={skip.name || 'Skip image'}
                 />
+                {!skip.allowed_on_road && (
+                    <div className="absolute top-1 right-1 text-yellow-500" data-tooltip-id="my-tooltip" data-tooltip-content="Not Allowed On The Road">
+                        <FaExclamationTriangle />
+                        <Tooltip id="my-tooltip" place="bottom" />
+                    </div>
+                )}
             </a>
+
             <div className="flex flex-col items-center">
                 <h1 className="font-bold text-[22px] leading-[100%] mt-4 text-gray-900 dark:text-white">
                     {skip.size} yard Skip
@@ -97,7 +106,6 @@ function Item({ skip, selectedSkip, handleSkipSelect }: props) {
                 >
                     <div
                         className="flex flex-col items-center"
-
                     >
                         <h1 className="font-[400]">
                             {hovered ? <IoCloseSharp /> : <FaCheck />}

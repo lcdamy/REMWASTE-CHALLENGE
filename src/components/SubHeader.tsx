@@ -13,7 +13,8 @@ const SubHeader = () => {
       </div>
       <div className="dark:bg-[#0F053C] bg-white dark:text-white text-[14px] border dark:border-[#FFFCF5] border-gray-400 font-[400] flex justify-center items-center gap-2 mt-4 p-3 rounded-lg">
         <div> <FaExclamationTriangle /> </div>
-        <div>  Imagery and information shown throughout this website may not reflect the exact shape or size specification.colooues may vary options and or accessories may be featured at additional cost. Please refer to the skip size guide for more information.
+        <div>
+          Imagery and information shown throughout this website may not reflect the exact shape or size specification. Colours may vary. Options and/or accessories may be featured at additional cost. Please refer to the skip size guide for more information.
         </div>
       </div>
     </>

@@ -53,12 +53,12 @@ const Stepper = () => {
                     ${isDropdownOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0 pointer-events-none'}
                 `}
             >
-                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200 p-2">
                     {steps.map((el) => (
                         <li
                             key={el.id}
                             onClick={() => handleSelectStep(el.id.toString())}
-                            className={`${currentStep.title === el.title ? 'bg-[#651FFF] text-white' : ''} hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white cursor-pointer`}
+                            className={`${currentStep.title === el.title ? 'bg-[#651FFF] text-white' : ''} hover:bg-gray-100 dark:hover:bg-gray-500 border-b dark:border-y-white/70 dark:hover:text-white cursor-pointer`}
                         >
                             <div className="px-4 py-2 flex gap-2 items-center">
                                 {el.id}/6 <FaLongArrowAltRight /> {el.title}
