@@ -52,14 +52,18 @@ Make sure you have the following installed:
 
 📁 Folder Structure
 
+```
 REMWaste-challenge/
 ├── public/
 ├── src/
 │   ├── assets/         # Images, icons, etc.
 │   ├── components/     # Reusable UI components
-│   ├── styles/         # CSS/SCSS files
-│   ├── App.js
-│   └── index.js
+│   ├── lib             # Constants, types
+│   ├── store           # Zustand store
+│   ├── App.tsx
+│   └── index.css
+│   └── main.tsx
 ├── .gitignore
 ├── package.json
 └── README.md
+```
