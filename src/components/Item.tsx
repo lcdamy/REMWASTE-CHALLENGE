@@ -94,7 +94,7 @@ function Item({ skip, selectedSkip, handleSkipSelect }: props) {
                     onClick={() => handleSkipSelect(skip)}
                     onMouseEnter={() => { setHovered(true); }}
                     onMouseLeave={() => { setHovered(false); }}
-                    initial={{ top: '50%', height: '2rem', borderRadius: '100%' }}
+                    initial={{ top: '50%', height: '4rem', borderRadius: '100%' }}
                     transition={{ delay: 0.2, stiffness: 100, damping: 10, duration: 0.5, type: 'spring' }}
                     animate={{ height: '8rem', borderRadius: '100%' }}
                     className="
