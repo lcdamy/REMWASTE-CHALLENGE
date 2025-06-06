@@ -29,12 +29,14 @@ function Step({ step, isSelected, isPrevious, setSelectedStep, isLast }: props) 
       <div className='flex items-center gap-4'>
         <span
           className={`
-            flex items-center justify-center text-sm w-8 h-8 rounded-full
-            ${isSelected || isPrevious
+        flex items-center justify-center text-sm w-8 h-8 rounded-full
+        aspect-square
+        ${isSelected || isPrevious
               ? 'bg-[#651FFF] text-white'
               : 'bg-gray-200 text-gray-900 dark:bg-[#79869A] dark:text-white'}
-            transition-colors duration-200
+        transition-colors duration-200
           `}
+          style={{ minWidth: '2rem', minHeight: '2rem' }}
         >
           {(isPrevious || isSelected)
             ? (<FaCheck className='w-3.5 h-3.5 text-white' />)
@@ -43,9 +45,8 @@ function Step({ step, isSelected, isPrevious, setSelectedStep, isLast }: props) 
         </span>
         <div>
           <h3 className={`
-            font-medium leading-tight
-            ${isPrevious || isSelected ? 'text-white' : ''}
-            ${isSelected ? 'font-semibold' : ''}
+        font-[600] leading-tight
+        ${isSelected ? 'font-semibold' : ''}
           `}>
             {step.title}
           </h3>

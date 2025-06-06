@@ -7,7 +7,7 @@ body {
   background-image: url('../public/GradientMesh_Light.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: #fff;
+  background-color: #ebe7f89c;
 }
 
 /* Dark mode override */

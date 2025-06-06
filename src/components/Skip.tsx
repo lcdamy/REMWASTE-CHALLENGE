@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Continue from './Continue';
 import SubHeader from './SubHeader';
 import type { ISkip } from '../lib/constants'
 import Item from './Item';
@@ -85,26 +84,6 @@ const Skip = () => {
                     </div>
                 ))}
             </div>
-            {selectedSkip && (
-                <div className="sticky bottom-0 bg-black border border-white rounded-md w-full left-0 z-50 flex items-center justify-center gap-6">
-                    <Continue skip={skips.find(skip => skip.id === selectedSkip) || {
-                        id: 0,
-                        size: 0,
-                        hire_period_days: 0,
-                        transport_cost: null,
-                        per_tonne_cost: null,
-                        price_before_vat: 0,
-                        vat: 0,
-                        postcode: '',
-                        area: '',
-                        forbidden: false,
-                        created_at: '',
-                        updated_at: '',
-                        allowed_on_road: false,
-                        allows_heavy_waste: false,
-                    }} />
-                </div>
-            )}
         </div>
     );
 };
